@@ -19,8 +19,8 @@ Previously I worked as a machine learning engineer in the industry where I built
 
 I'm the author of [DenseAttention Network](https://github.com/andrewargatkiny/dense-attention) – a simplification of standard Transformer architecture which can serve as its drop-in replacement. It has several favorable properties:
 
-1) The architecture can run in both $O(N)$ and $O(N^2)$ time and space w.r.t sequence length $N$ depending on which option is optimal. 
-2) Despite being implemented in pure Pytorch, it's *significally faster* than standard architecture in both regimes. For small sequences, the gain in speed in $O(N^2)$ regime **is up to 77.1%**, as compared to default Transformer implementation, and it's **up to 15%** faster than low-level FlashAttention-2 implementation. And for long sequences, the model in $O(N)$ regime is faster by **orders of magnitude**.
-3) The model **achieves SOTA** on Long Range Arena (LRA) benhmark among  all Transformer-based or inspired models and even **competes** with State-Space-Model architectures.
-4) The BERT-like architecture with DenseAttention Network blocks instead of Transformer ones demonstrates quality **on par or better** than the former.
-5) And the last, the model is very *conceptually simple* and closely resembling the standard Transformer which makes it suitable for widespread adoption among practitioners' community.
+1. The architecture can run in both $$O(N)$$ and $$O(N^2)$$ time and space w.r.t sequence length $$N$$ depending on which option is optimal. 
+2. Despite being implemented in pure Pytorch, it's *significally faster*  than standard architecture in both regimes. For small sequences, the gain in speed in $$O(N^2)$$ regime **is up to 77.1%**, as compared to default Transformer implementation, and it's **up to 15%** faster than low-level FlashAttention-2 implementation. And for long sequences, the model in $$O(N)$$ regime is faster by **orders of magnitude**.
+3. The model **achieves SOTA** on Long Range Arena (LRA) benhmark among  all Transformer-based or inspired models and even **competes** with State-Space-Model architectures.
+4. The BERT-like architecture with DenseAttention Network blocks instead of Transformer ones demonstrates quality **on par or better** than the former.
+5. And the last, the model is very *conceptually simple* and closely resembling the standard Transformer which makes it suitable for widespread adoption among practitioners' community.
