@@ -2,24 +2,25 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: profile_pic.jpg
   image_circular: false # crops the image to make it circular
-  more_info: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
 
-news: true # includes a list of news items
-selected_papers: true # includes a list of papers marked as "selected={true}"
+news: false # includes a list of news items
+selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+I’m a ML research scientist with a mission to make the neural network architectures which power the modern Large Language Models computationally efficient and, at the same time, scalable linearly w.r.t. sequence length which is the major bottleneck of current standard architectures. Hopefully, it may expedite the path to AGI by dramatically reducing requirements for prolonged chains-of-thought like in OpenAI's o1 models and beyond. 
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+Previously I worked as a machine learning engineer in the industry where I built, shipped and oversaw high-load end-to-end ML pipelines impacting tens of millions daily users across diverse business domains.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+I'm the author of [DenseAttention Network](https://github.com/andrewargatkiny/dense-attention) – a simplification of standard Transformer architecture which can serve as its drop-in replacement. It has several favorable properties:
+
+1) The architecture can run in both $O(N)$ and $O(N^2)$ time and space w.r.t sequence length $N$ depending on which option is optimal. 
+2) Despite being implemented in pure Pytorch, it's *significally faster* than standard architecture in both regimes. For small sequences, the gain in speed in $O(N^2)$ regime **is up to 77.1%**, as compared to default Transformer implementation, and it's **up to 15%** faster than low-level FlashAttention-2 implementation. And for long sequences, the model in $O(N)$ regime is faster by **orders of magnitude**.
+3) The model **achieves SOTA** on Long Range Arena (LRA) benhmark among  all Transformer-based or inspired models and even **competes** with State-Space-Model architectures.
+4) The BERT-like architecture with DenseAttention Network blocks instead of Transformer ones demonstrates quality **on par or better** than the former.
+5) And the last, the model is very *conceptually simple* and closely resembling the standard Transformer which makes it suitable for widespread adoption among practitioners' community.
